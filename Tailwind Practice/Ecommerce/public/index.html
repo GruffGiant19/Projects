@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure the body doesn't allow horizontal scrolling */
+        html, body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <div class="flex h-screen">
+
+        <!-- side bar -->
+        <div class="p-4 space-y-2 w-[20%]">
+            <h3 class="text-black font-bold">Sizes:</h3>
+            <div class="flex flex-wrap gap-2">
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">XS</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">S</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">M</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">ML</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">L</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">XL</div>
+                <div class="h-8 w-8 rounded-full text-[10px] text-center flex items-center justify-center bg-[#ececec]">XXL</div>
+            </div>
+
+            <p class="text-xs text-center">Leave a star on Github if this repository was useful :)</p>
+
+            <div class="flex justify-center">
+                <button class="text-sm bg-[#f7f8fa] px-3 py-1 border border-slate-300">&#9733; Star</button>
+                <div class="flex items-center justify-end">
+                    <div class="w-2 overflow-hidden">
+                        <div class="h-2 bg-[#f7f8fa] rotate-45 transform origin-bottom-right border border-slate-300"></div>
+                    </div>
+                    <div class="bg-white p-1 rounded-lg border border-slate-300 text-sm flex-1">848</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div class="bg-white col-span-5 p-4 w-full ">
+            <div class="flex items-center justify-between mb-5">
+                <p>16 product(s) found</p>
+
+                <div class="flex items-center gap-2" >
+                    <p>Order by</p>
+                    <div>
+                        <button type="button" class="grid w-full cursor-default grid-cols-1 rounded-md bg-white py-1.5 pr-2 pl-3 text-left text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                            <span class="col-start-1 row-start-1 flex items-center gap-3 pr-6">
+                                <span class="block truncate">Select</span>
+                            </span>
+                            <svg class="col-start-1 row-start-1 size-5 self-center justify-self-end text-gray-500 sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd" d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- product cards -->
+            <!-- example product card -->
+            <div class="grid grid-cols-4">
+                <div class="w-52 h-80 relative mb-28 ">
+                    <div class="">
+                        <img src="./images/Image_1.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_2.png" alt="" class="object-cover h-52 w-52 ">
+                    </div>
+                    <div class="absolute bg-black inset-x-25 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_3.png" alt="" class="object-cover h-52 w-52">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_4.png" alt="" class="object-cover h-52 w-52 ">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_5.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_6.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_7.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_8.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_9.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_10.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_11.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_12.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_13.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/Image_14.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_15.png" alt="" class="object-cover h-52 w-52 ml-5">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+                <div class="w-52 h-80 relative mb-28">
+                    <div class="">
+                        <img src="./images/image_16.png" alt="" class="object-cover h-52 w-52 ml-10">
+                    </div>
+                    <div class="absolute bg-black inset-x-22 w-30 h-5 inset-y-0 text-white text-xs flex items-center justify-center">
+                        Free Shipping
+                    </div>
+                    <div class="h-28 text-center space-y-4 mt-3">
+                        <h3 >Cat Tee Black T-Shirt</h3>
+                        <div class="w-10 bg-[#ecc932] h-1 place-self-center mx-auto rounded-lg"></div>
+                        <div>
+                            <p>$ <span class="text-2xl font-bold">10</span>.90</p>
+                            <p class="text-gray-400 text-sm">or 9 x $1.21</p>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white p-3 text-sm" >Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

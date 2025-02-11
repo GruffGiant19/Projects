@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Web App</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-[#eee6d7] text-[#0b2e21] px-10 py-3 h-screen">
+    <main>
+        <nav class="flex justify-between items-center text-[#0a281d]">
+            <div class="flex items-center">
+                <img class="h-10" src="../images/law-firm-logo1.png" alt="A logo of the law firm">
+                <p class="text-xl font-header">Kawo Legal</p>
+            </div>
+            <ul class="flex space-x-4 font-medium text-[#0a281d]">
+                <li><a href="#" class="text-gray-700 hover:text-gray-900">Home</a></li>
+                <li><a href="./startups.html" class="text-gray-700 hover:text-gray-900">Startups </a></li>
+                <li><a href="#" class="text-gray-700 hover:text-gray-900">Register</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-gray-900">Login</a></li>
+            </ul>
+        </nav>
+    </main>
+
+    
+    <div class="px-16 py-16">
+        <form action="Register">
+            <div class="">
+                <div class="w-full md:w-1/2">
+                    <label class="block text-gray-700" for="fullName">First Name</label>
+                    <input class="bg-[#f7f1ea] border-[#e0b269] block w-full border rounded-md" type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label class="block text-gray-700" for="email">Email Address</label>
+                    <input class="bg-[#f7f1ea] border-[#e0b269] block w-full border rounded-md" type="email" id="email" name="email" required>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label class="block text-gray-700" for="email">Password</label>
+                    <input class="bg-[#f7f1ea] border-[#e0b269] block w-full border rounded-md" type="password" id="password" name="password" required>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <label class="block text-gray-700" for="email">Confirm Password</label>
+                    <input class="bg-[#f7f1ea] border-[#e0b269] block w-full border rounded-md" type="password" id="password" name="password" required>
+                </div>
+            </div>
+        </form>
+        <button class="bg-[#ebbf81] px-2 py-1 rounded-md">Sign Up</button>
+    </div>
+    
+
+    <footer class="flex justify-between mt-5">
+        <div>&copy;2025 Kawo Legal. All Rights Reserved</div>
+        <div class="flex gap-5">
+            <img class="h-5" src="../images/facebook.png" alt="" >
+            <img class="h-5" src="../images/instagram.png" alt="">
+            <img class="h-5" src="../images/linkedin.png" alt="">
+            <img class="h-5" src="../images/twitter.png" alt="">
+        </div>
+    </footer>    
+</body>
+</html>
