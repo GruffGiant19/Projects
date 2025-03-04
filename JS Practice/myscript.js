@@ -31,7 +31,7 @@ let pipValue = 10; // Pip value in your currency
 let calculatedLotSize = calculateLotSize(accountBalance, riskPercentage, stopLossPips, pipValue);
 console.log("Calculated Lot Size:", calculatedLotSize);
 
-let score = 65;
+let score = 82;
 
 if (score >= 90){
     console.log("A");
