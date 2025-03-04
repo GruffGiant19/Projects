@@ -1,35 +1,35 @@
-// // Some arithmetic operations
+// Some arithmetic operations
 
-// let price = 25;
-// let discount = 0.1;
+let price = 25;
+let discount = 0.1;
 
-// let newprice = price*discount;
+let newprice = price*discount;
 
-// console.log(newprice);
+console.log(newprice);
 
 
-// let lotSize = 0.1;
-// let currentPrice = 158.04;
-// let riskRatio = 2;
+let lotSize = 0.1;
+let currentPrice = 158.04;
+let riskRatio = 2;
 
-// function calculateLotSize(accountBalance, riskPercentage, stopLossPips, pipValue) {
-//     // Calculate the amount to risk per trade
-//     let riskAmount = accountBalance * (riskPercentage / 100);
+function calculateLotSize(accountBalance, riskPercentage, stopLossPips, pipValue) {
+    // Calculate the amount to risk per trade
+    let riskAmount = accountBalance * (riskPercentage / 100);
 
-//     // Calculate the lot size
-//     let lotSize = riskAmount / (stopLossPips * pipValue);
+    // Calculate the lot size
+    let lotSize = riskAmount / (stopLossPips * pipValue);
 
-//     return lotSize;
-// }
+    return lotSize;
+}
 
-// // Example usage
-// let accountBalance = 10000; // Account balance in your currency
-// let riskPercentage = 1; // Risk percentage per trade
-// let stopLossPips = 50; // Stop loss in pips
-// let pipValue = 10; // Pip value in your currency
+// Example usage
+let accountBalance = 10000; // Account balance in your currency
+let riskPercentage = 1; // Risk percentage per trade
+let stopLossPips = 50; // Stop loss in pips
+let pipValue = 10; // Pip value in your currency
 
-// let calculatedLotSize = calculateLotSize(accountBalance, riskPercentage, stopLossPips, pipValue);
-// console.log("Calculated Lot Size:", calculatedLotSize);
+let calculatedLotSize = calculateLotSize(accountBalance, riskPercentage, stopLossPips, pipValue);
+console.log("Calculated Lot Size:", calculatedLotSize);
 
 let score = 65;
 
