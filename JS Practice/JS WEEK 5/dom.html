@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <img id="myImage" src="old-image.jpg" alt="Sample Image" width="300">
+    <button onclick="showAlert()">Click Me</button>
+
+    <script>
+        // Exercise 1: Change the image source using JavaScript
+        document.getElementById("myImage").src = "new-image.jpg";
+
+        // Exercise 2: Function for button click event
+        function showAlert() {
+            alert("Button Clicked! JavaScript is working.");
+        }
+    </script>
+</body>
+</html>
