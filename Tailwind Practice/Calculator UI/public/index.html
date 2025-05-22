@@ -1,36 +1,110 @@
-cd <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Calculator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class=" place-self-center content-center align-middle h-[180px] w-[300px] ml-10">
-        <div class="flex justify-end bg-[#848696] text-center text-white">90</div>
-        <div class="grid grid-cols-4 text-center font-medium border-collapse">
-            <div class="border-slate-300 border bg-[#e3e3e3] ">AC</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">+/-</div>
-            <div class="border-slate-300  border bg-[#e3e3e3]"">%</div>
-            <div class="border-slate-300    bg-[#f3933c]">&divide</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">7</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">8</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">9</div>
-            <div class="border-slate-300    bg-[#f3933c]">x</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">4</div>
-            <div class="border-slate-300 border  bg-[#e3e3e3]">5</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">6</div>
-            <div class="border-slate-300    bg-[#f3933c]">-</div>
-            <div class="border-slate-300 border  bg-[#e3e3e3]">1</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">2</div>
-            <div class="border-slate-300 border bg-[#e3e3e3]">3</div>
-            <div class="border-slate-300    bg-[#f3933c]">+</div>
-            <div class="border-slate-300 border bg-[#e3e3e3] col-span-2">0</div>
-            <div class="border-slate-300 border  bg-[#e3e3e3]">.</div>
-            <div class="border-slate-400    bg-[#f3933c]">=</div>
-        </div>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+  <div class="bg-white p-6 rounded-xl shadow-xl w-80">
+    <input 
+      id="display" 
+      type="text" 
+      disabled 
+      class="w-full h-14 text-2xl text-right px-3 py-2 border border-gray-300 rounded-lg bg-gray-100 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+    
+    <div class="grid grid-cols-4 gap-3">
+      <!-- Row 1 -->
+      <button onclick="appendValue('7')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">7</button>
+      <button onclick="appendValue('8')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">8</button>
+      <button onclick="appendValue('9')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">9</button>
+      <button onclick="appendValue('/')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg transition duration-200">/</button>
+      
+      <!-- Row 2 -->
+      <button onclick="appendValue('4')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">4</button>
+      <button onclick="appendValue('5')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">5</button>
+      <button onclick="appendValue('6')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">6</button>
+      <button onclick="appendValue('*')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg transition duration-200">*</button>
+      
+      <!-- Row 3 -->
+      <button onclick="appendValue('1')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">1</button>
+      <button onclick="appendValue('2')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">2</button>
+      <button onclick="appendValue('3')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">3</button>
+      <button onclick="appendValue('-')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg transition duration-200">-</button>
+      
+      <!-- Row 4 -->
+      <button onclick="appendValue('0')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200 col-span-2">0</button>
+      <button onclick="appendValue('.')" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 rounded-lg transition duration-200">.</button>
+      <button onclick="appendValue('+')" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-lg transition duration-200">+</button>
+      
+      <!-- Row 5 -->
+      <button onclick="clearDisplay()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-4 rounded-lg col-span-2 transition duration-200">C</button>
+      <button onclick="calculate()" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-lg col-span-2 transition duration-200">=</button>
+
     </div>
-    <h1>Hello</h1>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    
+    // Add event listener for keyboard input
+    document.addEventListener('keydown', function(event) {
+      const key = event.key;
+      
+      // Allow numbers (0-9)
+      if (/[0-9]/.test(key)) {
+        appendValue(key);
+      }
+      // Allow basic operators (+, -, *, /)
+      else if (/[\+\-\*\/]/.test(key)) {
+        appendValue(key);
+      }
+      // Allow decimal point
+      else if (key === '.') {
+        appendValue(key);
+      }
+      // Handle Enter key as equals
+      else if (key === 'Enter') {
+        calculate();
+      }
+      // Handle Backspace key
+      else if (key === 'Backspace') {
+        event.preventDefault(); // Prevent navigating back in some browsers
+        display.value = display.value.slice(0, -1);
+      }
+      // Handle Escape key as clear
+      else if (key === 'Escape') {
+        clearDisplay();
+      }
+      
+      // Prevent default for calculator keys
+      if (/[0-9\+\-\*\/\.]|Enter|Backspace|Escape/.test(key)) {
+        event.preventDefault();
+      }
+    });
+
+    // Focus on display when page loads
+    window.onload = function() {
+      display.focus();
+    };
+
+    function appendValue(value) {
+      display.value += value;
+    }
+    
+    function calculate() {
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        alert("Invalid expression");
+      }
+    }
+    
+    function clearDisplay() {
+      display.value = "";
+    }
+  </script>
 </body>
 </html>
